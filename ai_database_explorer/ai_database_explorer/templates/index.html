@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Database Explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <span class="db-badge">company.db</span>
+    </div>
+    <div class="sidebar-label">Schema</div>
+    <div id="schema-tree" class="schema-tree">
+      <div class="schema-loading">Loading schema…</div>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="topbar">
+      <h1>AI Database Explorer</h1>
+      <p>Ask about your data in plain English — no SQL needed.</p>
+    </header>
+
+    <section class="transcript" id="transcript">
+      <div class="entry entry-bot">
+        <div class="entry-label">bot</div>
+        <div class="entry-body">
+          Hi — I can answer questions about the employees, departments, and products
+          tables. Try "show all employees" or click a table on the left to get started.
+        </div>
+      </div>
+    </section>
+
+    <form class="composer" id="composer">
+      <span class="prompt-glyph">&gt;</span>
+      <input
+        type="text"
+        id="message-input"
+        autocomplete="off"
+        placeholder="Ask about employees, departments, or products"
+      />
+      <button type="submit">Ask</button>
+    </form>
+
+  </main>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
